@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
   <title>Jenn &amp; Matt - Wedding 2018</title>
   <!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
   <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/MLLoadImages.js"></script>
   <script src="js/site.js"></script>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/leaves.css" />
 </head>
 <body>
-  <div id="leaves"></div>
-  <audio loop autoplay>
+  <div id="preload-images">
+    <img src="images/leaf.png" />
+    <img src="images/monogram.jpg" />
+  </div>
+  <div id="splash-screen">
+    <div id="svg-wrapper">
+      <div id="monogram"></div>
+      <div id="circle-leaves"></div>
+      <!--<div id="loading-description">Loading, please be patient.</div>-->
+    </div>
+    <!--<div id="bar-1" class="bar"></div>
+    <div id="bar-2" class="bar"></div>-->
+  </div>
+  <audio loop>
     <source src="files/A-Thousand-Years.mp3" type="audio/mpeg">
   </audio>
   <div id="page1" class="page">
