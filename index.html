@@ -8,53 +8,59 @@
   <script src="js/MLLoadImages.js"></script>
   <script src="js/site.js"></script>
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/leaves.css" />
 </head>
 <body>
-  <div id="preload-images">
-    <img src="images/leaf.png" />
-    <img src="images/monogram.jpg" />
-  </div>
-  <div id="splash-screen">
-    <div id="svg-wrapper">
-      <div id="monogram"></div>
-      <div id="circle-leaves"></div>
-      <!--<div id="loading-description">Loading, please be patient.</div>-->
+  <div id="required-content">
+    <div id="preload-images">
+      <img src="images/leaf.png" />
+      <img src="images/monogram.jpg" />
     </div>
-    <!--<div id="bar-1" class="bar"></div>
-    <div id="bar-2" class="bar"></div>-->
-  </div>
-  <audio loop>
-    <source src="files/A-Thousand-Years.mp3" type="audio/mpeg">
-  </audio>
-  <div id="page1" class="page">
-    <img src="images/page1.png"  class="normal-image" />
-    <img src="images/leaves1.png" class="leaves1" />
-  </div>
-  <div class="banner banner1">
-    <img src="images/date.png" class="normal-image" />
-    <img src="images/leaves3.png" class="leaves2" />
-    <img src="images/leaves1.png" class="leaves3" />
-  </div>
-  <div id="page2" class="page">
-    <div class="wrapper-image">
-      <img src="images/attire.png" class="normal-image" />
+    <div id="splash-screen">
+      <div id="svg-wrapper">
+        <div id="monogram"></div>
+        <div id="circle-leaves"></div>
+      </div>
     </div>
+    <audio loop>
+      <source src="files/A-Thousand-Years.mp3" type="audio/mpeg">
+    </audio>
   </div>
-  <div class="banner">
-    <img src="images/respondby.png" class="normal-image" />
-    <img src="images/leaves3.png" class="leaves4" />
-    <img src="images/leaves1.png" class="leaves5" />
-  </div>
-  <div id="page3" class="page">
-    <div class="wrapper-image">
-      <img src="images/map.png" class="normal-image" />
-      <img src="images/leaves2.png" class="flower" />
+  <span id="page-content">
+    <header>
+      <div id="menu-button">Menu</div>
+      <a href="/" id="site-logo"></a>
+      <div id="volume-speaker"></div>
+    </header>
+    <div id="page1" class="page">
+      <img src="images/page1.png" class="normal-image" />
+      <img src="images/leaves1.png" class="leaves1" />
     </div>
-  </div>
-  <div class="banner">
-    <img src="images/quirkydots.png" class="normal-image" />
-    <div>Thank you to <a href="http://quirkydots.com" target="_blank">Quirky Dots</a> for designing our invitation.</div>
-  </div>
+    <div class="banner banner1">
+      <img src="images/date.png" class="normal-image" />
+      <img src="images/leaves3.png" class="leaves2" />
+      <img src="images/leaves1.png" class="slide-in leaves3" side="right" position-start="-30" position-end="-7" />
+    </div>
+    <div id="page2" class="page">
+      <div class="wrapper-image">
+        <img src="images/attire.png" class="slide-in normal-image" side="center" />
+      </div>
+    </div>
+    <div class="banner">
+      <img src="images/respondby.png" class="slide-in normal-image" side="center" />
+      <img src="images/leaves3.png" class="slide-in leaves4" side="right" position-start="-30" position-end="-7" />
+      <img src="images/leaves1.png" class="slide-in leaves5" side="left" position-start="-30" position-end="-7" />
+    </div>
+    <div id="page3" class="page">
+      <div class="wrapper-image">
+        <img src="images/map.png" class="normal-image" />
+        <img src="images/leaves2.png" class="flower" />
+      </div>
+    </div>
+    <div class="banner">
+      <img src="images/quirkydots.png" class="normal-image" />
+      <div>Thank you to <a href="http://quirkydots.com" target="_blank">Quirky Dots</a> for designing our invitation.</div>
+    </div>
+  </span>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
 </body>
 </html>

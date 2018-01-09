@@ -16,7 +16,10 @@ $(function(){
     "images/map.png",
     "images/page1.png",
     "images/quirkydots.png",
-    "images/respondby.png"
+    "images/respondby.png",
+    "images/monogram.png",
+    "images/speaker.png",
+    "images/speaker-mute.png"
   ]);
 
   for(i=0;i<$("#preload-images img").length;i++) {
@@ -47,11 +50,62 @@ $(function(){
     });
 
     if (loadedPercent == 100) {
-      $("#svg-wrapper").addClass("no-pulsate");
       setTimeout(function(){
-        $("#splash-screen").fadeOut(500);
+        $("#splash-screen").css("overflow-y","hidden").fadeOut(500);
+        $("body").css("overflow-y","auto");
         $("audio")[0].play();
-      },1000);
+      },0); //add in 1000 again when ready
+    }
+  });
+
+  $(window).scroll(function(e){
+    checkSlideIn($(this).scrollTop());
+  });
+
+  $(document).on("click","#volume-speaker",function(){
+    $(this).toggleClass("volume-disabled");
+    if ($(this).hasClass("volume-disabled")) {
+      $("audio")[0].pause();
+    } else {
+      $("audio")[0].play();
     }
   });
 });
+
+function checkSlideIn(windowTop) {
+  var windowHeight = $(window).outerHeight();
+  var tolerance = windowHeight/2;
+
+  $(".slide-in").each(function(){
+    var side = $(this).attr("side");
+    var start = $(this).attr("position-start");
+    var end = $(this).attr("position-end");
+    var offsetTop = $(this).offset().top - windowTop;
+
+    if (offsetTop < windowHeight) {
+      if (offsetTop <= tolerance && offsetTop >= 0) {
+        var factor = Math.abs(offsetTop/tolerance);
+        var opacityFactor = 1 * factor;
+        var difference = Math.abs(start) - Math.abs(end);
+        var position = Math.abs(end) + (difference * factor);
+
+        if (side == "center") {
+          //$(this).css("transform","translate(0,-"+((1-opacityFactor)*100)+"%)");
+        } else {
+          $(this).css(side,"-"+position+"%");
+        }
+        $(this).css("opacity",(1 - opacityFactor));
+      } else {
+        $(this).css("opacity","1");
+        if (side == "center") {
+          //$(this).css("transform","scale(1)");
+        } else {
+          $(this).css(side,end+"%");
+        }
+      }
+    } else {
+      $(this).css(side,"-50%");
+      $(this).css("opacity","0");
+    }
+  });
+}

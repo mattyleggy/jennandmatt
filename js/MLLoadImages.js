@@ -23,7 +23,7 @@ MLLoadImages.prototype.addLoadedImage = function() {
 MLLoadImages.prototype.loadImages = function(callback) {
   for (i=0;i<this.images.length;i++) {
     currentObject = this;
-    //use jQuery to load image at this point until a better JavaScript solution is found
+    //use jQuery to load image at this point until a better JavaScript solution is found    
     $("<img src='"+this.images[i]+"' />").on("load",function(){
       return callback(currentObject.addLoadedImage()); //provide a callback to know the current percentage of images loaded
     });
@@ -32,7 +32,7 @@ MLLoadImages.prototype.loadImages = function(callback) {
 
 /*
  * Get the current loaded percentage based on the amount of images provided
- * &return loaded image percentage 
+ * &return loaded image percentage
  */
 MLLoadImages.prototype.getLoadedPercent = function() {
   return (this.preloadedImages / this.images.length) * 100;
