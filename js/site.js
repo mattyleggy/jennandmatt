@@ -74,18 +74,20 @@ $(function(){
 
 function checkSlideIn(windowTop) {
   var windowHeight = $(window).outerHeight();
-  var tolerance = windowHeight/2;
+  var windowHeightTolerance = Math.floor(windowHeight/4.5);
+  var tolerance = windowHeight/3;
 
   $(".slide-in").each(function(){
     var side = $(this).attr("side");
     var start = $(this).attr("position-start");
     var end = $(this).attr("position-end");
-    var offsetTop = $(this).offset().top - windowTop;
-
+    var offsetTop = ($(this).offset().top - windowTop) + windowHeightTolerance;
     if (offsetTop < windowHeight) {
-      if (offsetTop <= tolerance && offsetTop >= 0) {
-        var factor = Math.abs(offsetTop/tolerance);
+      if (offsetTop <= windowHeight && offsetTop >= 0) {
+        var factor = Math.abs(offsetTop/tolerance)-2;
+        if (factor < 0) { factor = 0; }
         var opacityFactor = 1 * factor;
+        if (opacityFactor>1) { opacityFactor = 1; }
         var difference = Math.abs(start) - Math.abs(end);
         var position = Math.abs(end) + (difference * factor);
 
@@ -95,6 +97,8 @@ function checkSlideIn(windowTop) {
           $(this).css(side,"-"+position+"%");
         }
         $(this).css("opacity",(1 - opacityFactor));
+      } else if (offsetTop >= 0) {
+        $(this).css("opacity","0");
       } else {
         $(this).css("opacity","1");
         if (side == "center") {
