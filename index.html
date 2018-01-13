@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <title>Jenn &amp; Matt - Wedding 2018</title>
-  <!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1" />
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/MLLoadImages.js"></script>
   <script src="js/site.js"></script>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css?1.1" />
 </head>
 <body>
   <div id="required-content">
@@ -26,39 +27,69 @@
     </audio>
   </div>
   <span id="page-content">
+    <div id="next-page"></div>
     <header>
-      <div id="menu-button">Menu</div>
+      <div id="menu-button">
+        <div class="menu-hamburger">
+          <div class="menu-bar"></div>
+          <div class="menu-bar"></div>
+          <div class="menu-bar"></div>
+        </div>
+        <span>Menu</span>
+      </div>
       <a href="/" id="site-logo"></a>
       <div id="volume-speaker"></div>
     </header>
-    <div id="page1" class="page">
-      <img src="images/page1.png" class="normal-image" />
-      <img src="images/leaves1.png" class="leaves1" />
+    <div id="page1" class="jumper page">
+      <img id="front-page" src="images/page1.png" class="normal-image" />
+      <img id="front-leaves" src="images/leaves1.png" class="leaves1" />
     </div>
-    <div class="banner banner1">
-      <img src="images/date.png" class="normal-image" />
-      <img src="images/leaves3.png" class="leaves2" />
+    <div class="jumper banner banner1">
+      <div class="banner-text slide-in" side="center">
+        <h2>Jennife Lisa Obaldo and Matthew Lord</h2>
+        <article>On Sunday, the eighth of April, Two Thousand Eighteen</article>
+        <article class="larger small-margin">At Ten O'Clock in the morning</article>
+        <article>Wedding ceremony and reception will be held at</article>
+        <article class="larger">The Gardens Club</article>
+        <article>75 Gardens Point Road, Brisbane</article>
+      </div>
+      <img src="images/leaves3.png" class="slide-in leaves2" side="left" position-start="-30" position-end="-7" />
       <img src="images/leaves1.png" class="slide-in leaves3" side="right" position-start="-30" position-end="-7" />
     </div>
-    <div id="page2" class="page">
+    <div id="page2" class="jumper page">
       <div class="wrapper-image">
         <img src="images/attire.png" class="slide-in normal-image" side="center" />
       </div>
     </div>
-    <div class="banner">
-      <img src="images/respondby.png" class="slide-in normal-image" side="center" />
+    <div class="jumper banner">
+      <div class="banner-text">
+        <h1>rsvp</h1>
+        <article>Please respond by the Eighth of February,</article>
+        <article>Two Thousand Eighteen</article>
+      </div>
       <img src="images/leaves3.png" class="slide-in leaves4" side="right" position-start="-30" position-end="-7" />
       <img src="images/leaves1.png" class="slide-in leaves5" side="left" position-start="-30" position-end="-7" />
     </div>
-    <div id="page3" class="page">
+    <div id="page3" class="jumper page">
       <div class="wrapper-image">
         <img src="images/map.png" class="slide-in normal-image" side="center" />
-        <img src="images/leaves2.png" class="flower" />
+        <!--<img src="images/leaves2.png" class="flower" />-->
       </div>
     </div>
-    <div class="banner">
-      <img src="images/quirkydots.png" class="normal-image" />
-      <div>Thank you to <a href="http://quirkydots.com" target="_blank">Quirky Dots</a> for designing our invitation.</div>
+    <div class="jumper banner">
+      <h1>places to stay</h1>
+      <article>Walking distance to reception and wedding</article>
+    </div>
+    <div id="page4" class="jumper page">
+      <div class="wrapper-image">
+
+      </div>
+    </div>
+    <div class="jumper banner">
+      <div id="quirky-dots">
+        <img src="images/quirkydots.png" class="normal-image" />
+        <div>Thank you to <a href="http://quirkydots.com" target="_blank">Quirky Dots</a> for designing our invitation.</div>
+      </div>
     </div>
   </span>
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
