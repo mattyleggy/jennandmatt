@@ -48,7 +48,7 @@ h2 {
 }
 
 article {
-  font-family: "Bri1xton","Georgia",serif;
+  font-family: "Brixton","Georgia",serif;
   color: #708963;
   font-size: 16px;
   letter-spacing: 0.02em;
@@ -209,6 +209,7 @@ header > div,header > a:link {
   position: absolute;
   left: 50%;
   margin-left: -40px;
+  transition: 0.3s ease all;
 }
 
 #volume-speaker {
@@ -477,7 +478,62 @@ img.normal-image,.wrapper-image {
   height: 100%;
 }
 
+table h2 {
+  color: #83a065;
+  font-size: 30px;
+}
+
+table {
+  max-width: 60%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table td {
+  padding: 0px 40px;
+}
+
+table img {
+  max-width: 90%;
+  border-radius: 100%;
+  display: inline-block;
+}
+
+.royal-image:hover,.sebel-image:hover {
+  border-radius: 10px;
+}
+
+.royal-image {
+  background-image: url("../images/royal.jpg");
+}
+
+.sebel-image {
+  background-image: url("../images/sebel.jpg");
+}
+
+.royal-image,.sebel-image {
+  display: inline-block;
+  background-size: auto 100%;
+  background-position: center;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  height: 400px;
+  width: 400px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.2);
+  transition: 0.2s ease all;
+}
+
+table td {
+  width: 50%;
+}
+
 @media screen and (max-width: 1200px) {
+  #site-logo {
+    left: 50px;
+  }
+
   #front-page {
     display: unset;
   }

@@ -100,10 +100,20 @@ $(function(){
   });
 
   $(document).on("click","#next-page",function(){
-    if ($(".jumper.active").length) {
+    jumperLength = $(".jumper").length;
+    if ($(".jumper.active").length && jumperLength == $("#page-content .jumper.active").index()) {
+      lastJumper = $("#page-content .jumper:last-child");
+      lastJumperHeight = lastJumper.outerHeight();
+      lastJumperTop = lastJumper.offset().top;
+      pageContentHeight = $("#page-content").outerHeight();
+      windowHeight = $(window).outerHeight();
+      scrollToPos = lastJumperTop - (windowHeight - lastJumperHeight);
+      $.scrollToPosition(scrollToPos);
+      $(".jumper.active").removeClass("active").next(".jumper").addClass("active");
+    } else if ($(".jumper.active").length && jumperLength >= $("#page-content .jumper.active").index()) {
       $.scrollToPosition($(".jumper.active").removeClass("active").next(".jumper").addClass("active").getMiddleOffset());
     } else {
-      $.scrollToPosition($($(".jumper")[1]).addClass("active").getMiddleOffset());
+      $.scrollToPosition($($(".jumper")[0]).addClass("active").getMiddleOffset());
     }
   });
 
@@ -114,7 +124,7 @@ function checkSlideIn(windowTop) {
   var windowHeight = $(window).outerHeight();
   var windowWidth = $(window).outerWidth();
   if (windowWidth > 1200) {
-    var windowHeightTolerance = Math.floor(windowHeight/4.5);
+    var windowHeightTolerance = Math.floor(windowHeight/6.5);
     var tolerance = windowHeight/3;
 
 
